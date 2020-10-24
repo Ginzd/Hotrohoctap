@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hotrohoctap">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SocialActivity"></activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:parentActivityName=".NewsActivity" />
+        <activity
+            android:name=".NewsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UpdateSinhVienActivity"
+            android:parentActivityName=".ListAllStudentActivity" />
+        <activity
+            android:name=".ListLopUpdateActivity"
+            android:parentActivityName=".ThemLopActivity" />
+        <activity
+            android:name=".UpdateLopActivity"
+            android:parentActivityName=".ListLopUpdateActivity" />
+        <activity
+            android:name=".ListAllStudentActivity"
+            android:parentActivityName=".AddStudentActivity" />
+        <activity
+            android:name=".StudentInClassActivity"
+            android:parentActivityName=".ListLopActivity" />
+        <activity
+            android:name=".MapsActivity"
+            android:parentActivityName=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
+        <activity
+            android:name=".AddStudentActivity"
+            android:parentActivityName=".CourseActivity" />
+        <activity
+            android:name=".ListLopActivity"
+            android:parentActivityName=".CourseActivity" />
+        <activity
+            android:name=".ThemLopActivity"
+            android:parentActivityName=".CourseActivity" />
+        <activity
+            android:name=".CourseActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
